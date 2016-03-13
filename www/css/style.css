@@ -1,0 +1,52 @@
+/* Empty. Add your own CSS if you like */
+@import './chat.css';
+
+
+
+.Gallery-thumb {
+  float: left;
+  max-width: 80px;
+  padding-right: 10px;
+}
+
+.Gallery-object img {
+  display: block;
+  margin: 0 auto;
+  padding-bottom: 1rem;
+}
+
+
+.Start {
+  background: #0B93F6;
+  color: white;
+  text-align: center;
+  padding-top: 75%;
+}
+
+.Start .logo {
+  transition: all 0.65s cubic-bezier(0.87, -0.41, 0, 1.78);
+  width: 20%;
+  display: block;
+  margin: 0 auto;
+  -webkit-transform-style: preserve-3d;
+}
+
+.Start .logo.active {
+  width: 40%;
+}
+
+.Start .logo.leave {
+  margin-top: -100%;
+  opacity: 0;;
+}
+
+
+.giant-icon {
+  font-size: 4rem;
+  line-height: 1.5;
+}
+
+
+.webview > *, .webview iframe {
+  height: 100%;
+}

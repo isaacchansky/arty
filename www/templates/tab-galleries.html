@@ -1,0 +1,12 @@
+<ion-view view-title="{{gallery.title}}">
+  <ion-content class="Gallery">
+    <ion-list>
+      <ion-item class="item item-icon-right " ng-repeat="o in gallery.objects" type="item-text-wrap" ui-sref="tab.gallery-detail({ objectid: o.objectid })">
+        <img ng-src="img/thumbnails/{{o.imageFilename}}" class="Gallery-thumb">
+        <h2>{{o.title}}</h2>
+        <p>{{o.artist}}</p>
+        <i class="icon ion-chevron-right icon-accessory"></i>
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-view>

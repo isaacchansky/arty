@@ -1,0 +1,44 @@
+<ion-view view-title="{{item.title}}">
+  <ion-content padding="true">
+    <div class="card Gallery-object">
+      <div class="item item-text-wrap">
+        <img ng-src="img/thumbnails/{{item.imageFilename}}" alt="">
+        <h2>{{item.title}}</h2>
+        <h5>{{item.artist}}</h5>
+        <button class="button button-block button-small" ng-click="more = !more">
+          {{ more ? 'Hide' : 'Show more' }}
+        </button>
+        <div class="list list-inset" ng-show="more">
+          <div class="item"><small><strong>date:</strong></small> {{item.date}}</div>
+          <div class="item"><small><strong>medium:</strong></small> {{item.medium}}</div>
+          <div class="item"><small><strong>materials:</strong></small> {{item.materials}}</div>
+          <div class="item"><small><strong>dimensions:</strong></small> {{item.dimensions}}</div>
+          <div class="item"><small><strong>credit:</strong></small> {{item.creditLine}}</div>
+          <div class="item" ng-click="showWebView()"><small>{{item.pmaUrl}}</small></div>
+        </div>
+
+        <div class="button-bar">
+          <a class="button " ng-class="{ 'button-positive': !liked }" ng-click="addLike()">
+            <span class="giant-icon" ng-class="{ 'ion-checkmark': liked, 'ion-happy-outline': !liked}"></span>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <ion-list>
+      <ion-item>
+        <p>Here's what you've liked so far:</p>
+      </ion-item>
+      <ion-item ng-repeat="l in likes">
+        <h2>{{l.title}}</h2>
+        <p>{{l.artist}}</p>
+      </ion-item>
+    </ion-list>
+
+  </ion-content>
+</ion-view>
+<ion-footer-bar >
+  <button class="button button-large button-block button-primary">
+    Have a question?
+  </button>
+</ion-footer-bar>

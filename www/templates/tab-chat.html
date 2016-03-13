@@ -1,0 +1,25 @@
+<ion-view hide-nav-bar="true" hide-back-button="true" ng-keyup="goNext($event.keyCode)" tabindex="0">
+  <ion-content padding="true">
+    <div ng-repeat="m in state.messages" style="overflow: auto;" class="{{ m.sender == theirname ? 'pull-left' : 'pull-right'}}">
+      <p class="message {{ m.sender == theirname ? 'from-them' : 'from-me'}}">{{m.text}}</p>
+    </div>
+    <br>
+    <p>{{state.status}}</p>
+  </ion-content>
+
+  <ion-footer-bar class="input item-input-inset">
+    <div ng-if="currentMessage == null">
+      <label class="item-input-wrapper">
+        <input type="text" name="userName" ng-model="myname" />
+      </label>
+      <button class="button button-dark" ng-click="setName(myname)">Send</button>
+    </div>
+    <div class="button-bar bar-dark" ng-if="currentMessage !== null">
+      <button ng-repeat="r in currentMessage.responses"
+              ng-click="r.cb()"
+              class="button">
+                {{r.name}}
+      </button>
+    </div>
+  </ion-footer-bar>
+</ion-view>

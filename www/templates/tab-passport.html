@@ -1,0 +1,32 @@
+<ion-view view-title="Passport">
+  <ion-content class="Passport" padding="true">
+    <div>
+      <p class="message from-them">
+        Hi there, {{myname}}!
+        Your passport is a personalized collection of your experiences throughout the museum.
+      </p>
+      <p class="message from-them">
+        Would you like to see what I have for you so far?
+      </p>
+    </div>
+    <div class="grid" style="position:relative;margin-top: 70%;">
+      <img class="grid-item" ng-repeat="l in likes" ng-src="/img/thumbnails/{{l.imageFilename}}" style="visibility: hidden"></>
+    </div>
+  </ion-content>
+  <ion-footer-bar class="input item-input-inset">
+<!--     <div ng-if="currentMessage == null">
+      <label class="item-input-wrapper">
+        <input type="text" name="userName" ng-model="myname" />
+      </label>
+      <button class="button button-dark" ng-click="setName(myname)">Send</button>
+    </div> -->
+    <div class="button-bar bar-dark" ng-if="currentMessage !== null">
+      <button class="button" ng-click="showLikes()">
+        Yeah
+      </button>
+      <button class="button">
+        Not now
+      </button>
+    </div>
+  </ion-footer-bar>
+</ion-view>
